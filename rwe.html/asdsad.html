@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trail Club - Trip Application</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0 20px;
+            font-family: "Times New Roman", serif;
+            font-size: 18px;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 25px 0;
+        }
+
+        .subtitle {
+            margin-bottom: 20px;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #0000ee;
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #aaa;
+            margin: 15px -20px;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+            padding: 0;
+        }
+
+        legend {
+            font-size: 20px;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 190px;
+            height: 22px;
+            box-sizing: border-box;
+        }
+
+        select {
+            width: 138px;
+            height: 22px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        input[type="date"] {
+            width: 135px;
+            height: 24px;
+        }
+
+        input[type="number"] {
+            width: 65px;
+            height: 24px;
+            box-sizing: border-box;
+        }
+
+        .experience {
+            margin-top: 0;
+        }
+
+        .radio-label,
+        .check-label {
+            display: block;
+            margin: 8px 0;
+        }
+
+        .radio-label input,
+        .check-label input {
+            margin-right: 5px;
+        }
+
+        textarea {
+            width: 400px;
+            height: 80px;
+            resize: both;
+            display: block;
+        }
+
+        .required {
+            margin-top: 35px;
+        }
+
+        button {
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+        .footer {
+            margin-top: 55px;
+            border-top: 2px solid #999;
+            padding-top: 25px;
+        }
+
+        .back {
+            margin-top: 20px;
+        }
+
+        .back a {
+            color: #0000ee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="top">Trail Club</h1>
+
+    <div class="subtitle">
+        Student hiking club · Classroom example
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a> ·
+        <a href="sdad.html">Routes</a> ·
+        <a href="asdsad.html">Apply for a trip</a>
+    </nav>
+
+    <hr>
+
+    <p>
+        <a href="index.html">Home</a> →
+        <a href="sdad.html">Routes</a> →
+        Application
+    </p>
+
+    <h2>Trip Application</h2>
+
+    <p>This is a practice form. It does not send or store information.</p>
+
+    <form id="trip-form">
+
+        <!-- Participant -->
+        <fieldset>
+            <legend>1. Participant</legend>
+
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="group">Student group</label>
+            <input type="text" id="group" name="group">
+        </fieldset>
+
+        <!-- Trip choice -->
+        <fieldset>
+            <legend>2. Trip choice</legend>
+
+            <label for="route">Route *</label>
+            <select id="route" name="route" required>
+                <option value="">Choose a route</option>
+                <option value="forest">Forest Trail</option>
+                <option value="mountain">Mountain Trail</option>
+                <option value="lake">Lake Trail</option>
+            </select>
+
+            <label for="date">Preferred date *</label>
+            <input
+            type="date" id="date" name="date" required>
+
+            <label for="participants">
+                Number of participants (1–4)
+            </label>
+            <input
+                type="number"
+                id="participants"
+                name="participants"
+                min="1"
+                max="4"
+                value="1"
+            >
+        </fieldset>
+
+        <!-- Experience -->
+        <fieldset class="experience">
+            <legend>3. Experience</legend>
+
+            <label class="radio-label">
+                <input type="radio" name="experience" value="beginner">
+                Beginner
+            </label>
+
+            <label class="radio-label">
+                <input type="radio" name="experience" value="regular">
+                I hike regularly
+            </label>
+
+            <p>Equipment I have:</p>
+
+            <label class="check-label">
+                <input type="checkbox" name="equipment" value="shoes">
+                Walking shoes
+            </label>
+
+            <label class="check-label">
+                <input type="checkbox" name="equipment" value="water">
+                Water bottle
+            </label>
+
+            <label class="check-label">
+                <input type="checkbox" name="equipment" value="jacket">
+                Jacket
+            </label>
+
+            <label for="notes">Questions or notes</label>
+            <textarea id="notes" name="notes"></textarea>
+        </fieldset>
+
+        <div class="required">
+            <label class="check-label">
+                <input type="checkbox" id="read" required>
+                I have read the route description *
+            </label>
+        </div>
+
+        <button type="submit" disabled>Send application</button>
+        <button type="reset">Reset form</button>
+
+    </form>
+
+    <p id="form-status" aria-live="polite"></p>
+
+    <div class="footer">
+        <strong>Trail Club</strong> - Fictional trips and prices for HTML practice
+
+        <div class="back">
+            <a href="#top">Back to top ↑</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('trip-form');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const statusMessage = document.getElementById('form-status');
+
+        function updateSubmitState() {
+            const requiredFields = form.querySelectorAll('[required]');
+            const isComplete = Array.from(requiredFields).every((field) => {
+                if (field.type === 'checkbox') {
+                    return field.checked;
+                }
+                return field.value.trim() !== '';
+            });
+
+            submitButton.disabled = !isComplete;
+        }
+
+        form.addEventListener('input', updateSubmitState);
+        form.addEventListener('change', updateSubmitState);
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const name = document.getElementById('name').value.trim();
+            const route = document.getElementById('route');
+            const routeLabel = route.options[route.selectedIndex].text;
+            const date = document.getElementById('date').value;
+
+            statusMessage.textContent = `Application sent for ${name} to ${routeLabel} on ${date}.`;
+            statusMessage.style.color = '#0a6d2d';
+            statusMessage.style.fontWeight = 'bold';
+            submitButton.disabled = true;
+            form.reset();
+            setTimeout(() => {
+                updateSubmitState();
+            }, 0);
+        });
+
+        updateSubmitState();
+    </script>
+
+</body>
+</html>
